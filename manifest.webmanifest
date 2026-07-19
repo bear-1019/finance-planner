@@ -1,14 +1,12 @@
 {
-  "name": "買車 × 買房財務試算",
-  "short_name": "財務試算",
-  "description": "Tesla 購車、車貸、現金流與購屋資金試算工具",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#f5f7fb",
-  "theme_color": "#0f8f83",
-  "lang": "zh-Hant-TW",
-  "icons": [
+  "name":"財務路線圖",
+  "short_name":"財務路線圖",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f7f3eb",
+  "theme_color":"#f6f1e8",
+  "lang":"zh-Hant",
+  "icons":[
     {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png"},
     {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png"}
   ]
