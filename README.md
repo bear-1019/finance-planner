@@ -1,11 +1,5 @@
-# 財務路線圖 V9
+# 財務路線圖 Trip Board V10
 
-將所有檔案上傳至 GitHub repository 根目錄，並於 Settings → Pages 啟用 GitHub Pages。
+上傳全部檔案至 GitHub repository 根目錄，再由 Settings → Pages 部署。
 
-V9 更新：
-- 總覽分別提供買車與買房結論
-- 新增購屋月份及房貸起繳年月
-- 年度資產與年度收支合併
-- 年度卡片可展開完整現金與各資產算式
-- 車貸與固定養車費分開按月份計算
-- 購屋可選擇動用台股／ETF及美元儲蓄險
+功能：三情境比較、逐年設定、美元儲蓄險、買車買房負擔分析、完整年度公式、PDF/HTML/CSV/JSON 匯出。
