@@ -1,1 +1,9 @@
-{"name": "財務路線圖", "short_name": "財務路線圖", "start_url": "./", "display": "standalone", "background_color": "#f7f4ee", "theme_color": "#35536d", "icons": []}
+{
+  "name": "財務路線圖",
+  "short_name": "財務路線圖",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ee",
+  "theme_color": "#304b63",
+  "icons": []
+}
