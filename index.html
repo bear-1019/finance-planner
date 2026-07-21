@@ -43,6 +43,20 @@ h2,h3,h4,p{margin-top:0}.head h2{font-size:20px;margin:1px 0 0}.sub{font-size:14
  body{background:#fff}.app{max-width:none;padding:0}.hero,.nav,#dashboard,#setup,#annual,.report-actions{display:none!important}#report{display:block!important}.card{border:0;box-shadow:none;padding:0;margin:0}.report-preview{border:0;padding:0;margin:0}.report-cover{grid-template-columns:1.1fr .9fr}.report-section{page-break-before:always;margin-top:0}.report-section:first-of-type{page-break-before:auto}.report-section h3{font-size:13px;margin:0 0 4px}.report-year-grid{grid-template-columns:repeat(2,1fr);gap:6px}.report-year{padding:7px}.report-year h4{font-size:11px}.rline{font-size:8.5px}.report-summary{padding:7px}.report-preview h2{font-size:18px;margin-bottom:3px}.sub{font-size:9px}
 }
 </style>
+
+<style id="v15-simplify">
+.nav{grid-template-columns:repeat(3,1fr)}
+.report-nav-hidden{display:none!important}
+.hero-actions{display:none!important}
+.quick-card .action-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.quick-card .quick-action{border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px;text-align:left;color:var(--ink);font-weight:800}
+.quick-card .quick-action small{display:block;color:var(--muted);font-weight:500;margin-top:4px}
+.quick-card .quick-action svg{width:21px;height:21px;color:#668392;margin-bottom:7px}
+#setup .step{padding:13px}
+#setup .step-grid{margin-top:9px}
+#annual .year-card{padding:12px}
+@media(max-width:680px){.quick-card .action-grid{grid-template-columns:1fr}.nav button{font-size:12px}.nav{gap:5px}}
+</style>
 </head>
 <body>
 <div class="app">
@@ -52,20 +66,20 @@ h2,h3,h4,p{margin-top:0}.head h2{font-size:20px;margin:1px 0 0}.sub{font-size:14
  <div class="hero-actions"><button class="btn white" onclick="go('dashboard')">查看結論</button><button class="btn ghost" onclick="go('setup')">設定計畫</button></div>
 </header>
 <nav class="nav">
- <button class="active" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12 12 4l9 8"/><path d="M5 10v10h14V10"/></svg>總覽</button>
- <button data-page="setup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="10" cy="19" r="2"/></svg>設定</button>
- <button data-page="annual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4m8-4v4M3 9h18"/></svg>年度</button>
- <button data-page="report"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6m-6 4h6"/></svg>報告</button>
+ <button class="active" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12 12 4l9 8"/><path d="M5 10v10h14V10"/></svg>決策</button>
+ <button data-page="setup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="10" cy="19" r="2"/></svg>計畫</button>
+ <button data-page="annual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4m8-4v4M3 9h18"/></svg>年度帳本</button>
+ <button class="report-nav-hidden" data-page="report"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6m-6 4h6"/></svg>報告</button>
 </nav>
 
 <section id="dashboard" class="page active">
  <article class="card"><div class="head"><div class="title"><div class="ico blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 15h18l-2-6H5z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><div><h2>買車結論</h2><div class="sub">交車時現金與後續年度負擔。</div></div></div><span id="carBadge" class="badge">—</span></div><div id="carDecision"></div></article>
  <article class="card"><div class="head"><div class="title"><div class="ico sage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 3l9 8"/><path d="M5 10v11h14V10M9 21v-7h6v7"/></svg></div><div><h2>買房結論</h2><div class="sub">購屋資金與房貸開始後的現金流。</div></div></div><span id="homeBadge" class="badge">—</span></div><div id="homeDecision"></div></article>
  <article class="card"><div class="head"><div class="title"><div class="ico sand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg></div><div><h2>三種路線比較</h2><div class="sub">以買房目標年度比較年底資產。</div></div></div><span id="compareYear" class="badge warn"></span></div><div id="routes" class="routes"></div></article>
-</section>
+<article class="card quick-card"><div class="head"><div class="title"><div class="ico blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/></svg></div><div><h2>下一步</h2><div class="sub">只保留四個最常用的操作。</div></div></div></div><div class="action-grid"><button class="quick-action" onclick="go('setup')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M4 12h16M4 19h16"/></svg>修改計畫<small>調整資產、收入、買車與買房</small></button><button class="quick-action" onclick="go('annual')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18"/></svg>查看年度帳本<small>追查每一筆資金變化</small></button><button class="quick-action" onclick="printReport()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg>匯出 PDF<small>輸出三情境完整報告</small></button><button class="quick-action" onclick="exportJSON()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m-4-4 4 4 4-4"/><path d="M5 20h14"/></svg>備份設定<small>保留目前所有輸入資料</small></button></div></article></section>
 
 <section id="setup" class="page">
- <article class="card"><div class="head"><div class="title"><div class="ico blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M4 12h16M4 19h16"/></svg></div><div><h2>計畫設定</h2><div class="sub">分四步驟設定，平常只顯示摘要。</div></div></div></div>
+ <article class="card"><div class="head"><div class="title"><div class="ico blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16M4 12h16M4 19h16"/></svg></div><div><h2>目前計畫</h2><div class="sub">平常只看摘要，需要修改時再按編輯。</div></div></div></div>
   <div class="step"><div class="step-top"><h3>1. 起始資產</h3><button class="btn soft small" onclick="editStart()">編輯</button></div><div id="startSetup" class="step-grid"></div></div>
   <div class="step"><div class="step-top"><h3>2. 逐年收入與分配</h3><button class="btn soft small" onclick="editRange()">顯示範圍</button></div><div id="yearSetup" style="margin-top:11px"></div></div>
   <div class="step"><div class="step-top"><h3>3. 買車計畫</h3><button class="btn soft small" onclick="editCar()">編輯</button></div><div id="carSetup" class="step-grid"></div></div>
