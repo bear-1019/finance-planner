@@ -1,9 +1,9 @@
 {
-  "name": "財務路線圖",
-  "short_name": "財務路線圖",
+  "name": "人生財務模擬器",
+  "short_name": "財務模擬器",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f7f4ee",
-  "theme_color": "#405b70",
+  "background_color": "#f6f3ed",
+  "theme_color": "#3f586d",
   "icons": []
 }
